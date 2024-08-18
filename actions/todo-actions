@@ -1,0 +1,50 @@
+"use server";
+import { signature } from "@/constants";
+import { addTodo } from "@/utils";
+
+export async function createTodo(prevState, formData) {
+  const title = formData.get("title");
+  const dot = formData.get("dot");
+  const payLoad = { title: title, dot: dot, features: signature };
+  let errors = {};
+  if (!title) {
+    errors.title = "please enter a todo title";
+  }
+  if (!dot) {
+    errors.dot = "please enter todo date";
+  }
+  if (Object.keys(errors).length > 0) {
+    return { errors };
+  }
+  try {
+    const result = await addTodo(payLoad);
+    return { success: true, message: `${title} todo Successfully Created` };
+  } catch (error) {
+    return { errors: error };
+  }
+}
+
+export async function externalCreateTodo(prevState, formData) {
+  const title = formData.get("title");
+  const dot = formData.get("dot");
+  const payLoad = { title: title, dot: dot };
+  let errors = {};
+  if (!title) {
+    errors.title = "please enter a todo title";
+  }
+  if (!dot) {
+    errors.dot = "please enter todo date";
+  }
+  if (Object.keys(errors).length > 0) {
+    return { errors };
+  }
+  try {
+    const data = await addTodo(payLoad);
+    if (data.error) {
+      return { message: data.message, error: data.error };
+    }
+    return { success: true, message: `${title} todo Successfully Created` };
+  } catch (error) {
+    return { errors: error };
+  }
+}

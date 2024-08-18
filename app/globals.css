@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -16,6 +16,10 @@ body {
   min-height: 100vh;
 }
 
+.logout {
+  background: linear-gradient(#121214, #272629);
+  color: #d0cfd6;
+}
 h1 {
   font-size: 2rem;
   text-align: center;
@@ -28,6 +32,15 @@ ul {
 }
 
 #auth-form {
+  width: 90%;
+  max-width: 40rem;
+  border-radius: 6px;
+  padding: 3rem 4rem;
+  margin: 5rem auto;
+  background-color: #b8b4c3;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+}
+#todo-form {
   width: 90%;
   max-width: 40rem;
   border-radius: 6px;
@@ -52,8 +65,23 @@ ul {
   font-weight: bold;
   color: #46454a;
 }
+#todo-form label {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-weight: bold;
+  color: #46454a;
+}
 
 #auth-form input {
+  font: inherit;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 3px;
+  border: none;
+  background-color: #d9d7df;
+  color: #46454a;
+}
+#todo-form input {
   font: inherit;
   width: 100%;
   padding: 0.5rem;
@@ -147,7 +175,7 @@ main {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
- /*  color:#fff; */
+  /*  color:#fff; */
 }
 
 .sidebar-menu {
@@ -162,7 +190,8 @@ main {
   cursor: pointer;
 }
 
-.sidebar-item.active, .sidebar-item:hover {
+.sidebar-item.active,
+.sidebar-item:hover {
   background-color: rgb(201, 94, 94);
 }
 
@@ -172,7 +201,7 @@ main {
 
 .main-content {
   flex-grow: 1;
- /*  background-color: #fff; */
+  /*  background-color: #fff; */
   padding: 20px;
 }
 
@@ -216,7 +245,7 @@ main {
 
 .orders-icon {
   font-size: 50px;
-  color:  rgb(201, 94, 94);
+  color: rgb(201, 94, 94);
   margin-bottom: 20px;
 }
 
@@ -233,7 +262,7 @@ main {
   align-items: center;
   padding: 10px 0;
   cursor: pointer;
-  color:#fff;
+  color: #fff;
 }
 
 .sidebar-logout:hover {
@@ -242,4 +271,7 @@ main {
 
 .sidebar-logout svg {
   margin-right: 10px;
+}
+.logout:hover {
+  background-color: rgb(201, 94, 94);
 }
