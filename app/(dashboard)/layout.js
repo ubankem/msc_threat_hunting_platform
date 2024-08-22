@@ -53,9 +53,13 @@ const DashboardLayout = ({ children }) => {
               Create Todo (Unsecured Client)
             </Link>
           </li>
-          {/* <li className="sidebar-item">
-            <FaStore /> Followed Sellers
+          <li className="sidebar-item">
+            <FaStore />{" "}
+            <Link href="/reports" className="active">
+              View Reports/Charts
+            </Link>
           </li>
+          {/*
           <li className="sidebar-item">
             <FaHistory /> Recently Viewed
           </li>
